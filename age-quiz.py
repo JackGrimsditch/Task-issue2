@@ -1,16 +1,22 @@
-# ask the user for their age and save as user_age
-user_age = int(input("Enter your age: "))
+# Ask the user for their age and handle non-numeric input
+while True:
+    user_input = input("Enter your age: ")
+    if user_input.isdigit():  # Check if the input is a numeric value
+        user_age = int(user_input)
+        break
+    else:
+        print("Please enter a valid age (numeric value).")
 
-#create the responses that differ based on the users input, using the if, elif and else functions
+# Create the responses based on the user's age
 if user_age >= 40:
-    print("you're over the hill")
+    print("You're over the hill.")
     if user_age > 100:
-        print("sorry, you are dead")
+        print("Sorry, you are dead.")
 elif user_age >= 65:
-    print("enjoy your retirement")
+    print("Enjoy your retirement!")
 elif user_age < 13:
-    print("you qualify for a kiddie discount")
+    print("You qualify for a kiddie discount.")
 elif user_age == 21:
-    print("congratulations on your 21st!")
+    print("Congratulations on your 21st!")
 else:
-    print("age is just a number")
+    print("Age is just a number.")
